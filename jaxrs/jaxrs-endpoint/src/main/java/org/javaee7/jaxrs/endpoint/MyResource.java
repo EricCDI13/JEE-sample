@@ -52,16 +52,18 @@ import javax.ws.rs.PathParam;
 @Path("/fruit")
 public class MyResource {
 
+    //http://localhost:8080/jaxrs-jaxrs-endpoint/api/fruit
     @GET
     public String get() {
         System.out.println("GET");
         return Database.getAll();
     }
 
+    //http://localhost:8080/jaxrs-jaxrs-endpoint/api/fruit/ii
     @GET
     @Path("{name}")
     public String get(@PathParam("name") String payload) {
-        System.out.println("GET");
+        System.out.println("GET @Path(\"{name}\")");
         return Database.get(payload);
     }
 
